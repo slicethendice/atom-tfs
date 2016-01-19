@@ -4,6 +4,11 @@
   "version": "1.0.0",
   "description": "A short description of your package",
   "keywords": [
+    "tfs",
+    "team",
+    "foundation";
+    "server",
+    "microsoft"
   ],
   "activationCommands": {
     "atom-workspace": "atom-tfs:toggle"
