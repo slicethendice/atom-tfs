@@ -25,7 +25,7 @@ module.exports = AtomTfs =
     atomTfsViewState: @atomTfsView.serialize()
 
   toggle: ->
-    console.log 'AtomTfs was toggled!'
+    console.log 'AtomTfs was toggled !'
 
     if @modalPanel.isVisible()
       @modalPanel.hide()

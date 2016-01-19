@@ -2,21 +2,34 @@
 'context-menu':
   'atom-text-editor': [
     {
-      'label': 'Toggle atom-tfs'
-      'command': 'atom-tfs:toggle'
-    }
-  ]
-'menu': [
-  {
-    'label': 'Packages'
-    'submenu': [
       'label': 'TFS'
       'submenu': [
         {
-          'label': 'Toggle'
-          'command': 'atom-tfs:toggle'
+          'label': 'Get Latest Version'
+          'command': 'atom-tfs:getLatestVersion'
+        }
+        {
+          'label': 'Undo'
+          'command': 'atom-tfs:undo'
         }
       ]
-    ]
-  }
-]
+    }
+  ]
+# 'menu': [
+#   {
+#     'label': 'Packages'
+#     'submenu': [
+#       'label': 'TFS'
+#       'submenu': [
+#         {
+#           'label': 'Get Latest Version'
+#           'command': 'atom-tfs:getLatestVersion'
+#         }
+#         {
+#           'label': 'Undo'
+#           'command': 'atom-tfs:undo'
+#         }
+#       ]
+#     ]
+#   }
+# ]
