@@ -1,5 +1,7 @@
 # atom-tfs package
 
-A short description of your package.
+Work in progress based upon [TFS command line NodeJS wrapper](https://github.com/ivangabriele/tfs).
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+For now it only unlocks TFS source controlled files to enable editing.
+
+Planned to integrate many TFS functionalities as get latest, undo, checkin, etc.
