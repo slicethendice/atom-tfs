@@ -1,12 +1,12 @@
 {
   "name": "atom-tfs",
   "main": "./lib/atom-tfs",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "TFS Atom integration.",
   "author": {
     "name": "Ivan Gabriele",
     "email": "ivan.gabriele@gmail.com",
-    "url" : "http://www.ivangabriele.com"
+    "url": "http://www.ivangabriele.com"
   },
   "keywords": [
     "tfs",
