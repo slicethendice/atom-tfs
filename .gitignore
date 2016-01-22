@@ -7,8 +7,3 @@ npm-debug.log*
 
 # Dependency directory
 node_modules
-
-### tfs ###
-
-# Configuration files
-/config/*.json
