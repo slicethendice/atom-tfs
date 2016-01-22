@@ -6,7 +6,7 @@
       'submenu': [
         {
           'label': 'Get Latest Version'
-          'command': 'atom-tfs:getLatestVersion'
+          'command': 'atom-tfs:get'
         }
         {
           'label': 'Undo'
