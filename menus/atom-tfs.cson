@@ -1,5 +1,20 @@
 # See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
 'context-menu':
+  '.tree-view': [
+    {
+      'label': 'TFS'
+      'submenu': [
+        {
+          'label': 'Get Latest Version'
+          'command': 'atom-tfs:get'
+        }
+        {
+          'label': 'Undo'
+          'command': 'atom-tfs:undo'
+        }
+      ]
+    }
+  ]
   'atom-text-editor': [
     {
       'label': 'TFS'

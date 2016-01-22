@@ -16,6 +16,8 @@ fileExists = (filePath, isDirectory) ->
 setup = ->
   pf32Path = process.env['ProgramFiles(x86)']
   pf64Path = process.env['ProgramFiles']
+  tfPath   = '/Common7/IDE/TF.exe'
+
   switch true
     when fileExists(pf64Path + '/Microsoft Visual Studio 14.0' + tfPath)
       vsArchitecture = 64
@@ -50,9 +52,10 @@ setup = ->
     else
       output.error 'Impossible to find you TF.exe'
       break
+
   {
-    vsArchitecture = vsArchitecture
-    vsVersion = vsVersion
+    vsArchitecture: vsArchitecture
+    vsVersion: vsVersion
   }
 
 module.exports = setup
