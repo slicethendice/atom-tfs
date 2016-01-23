@@ -8,10 +8,6 @@
           'label': 'Get Latest Version'
           'command': 'atom-tfs:get'
         }
-        {
-          'label': 'Undo'
-          'command': 'atom-tfs:undo'
-        }
       ]
     }
   ]
@@ -23,28 +19,20 @@
           'label': 'Get Latest Version'
           'command': 'atom-tfs:get'
         }
-        {
-          'label': 'Undo'
-          'command': 'atom-tfs:undo'
-        }
       ]
     }
   ]
-# 'menu': [
-#   {
-#     'label': 'Packages'
-#     'submenu': [
-#       'label': 'TFS'
-#       'submenu': [
-#         {
-#           'label': 'Get Latest Version'
-#           'command': 'atom-tfs:getLatestVersion'
-#         }
-#         {
-#           'label': 'Undo'
-#           'command': 'atom-tfs:undo'
-#         }
-#       ]
-#     ]
-#   }
-# ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'TFS'
+      'submenu': [
+        {
+          'label': 'Get Latest Version'
+          'command': 'atom-tfs:get'
+        }
+      ]
+    ]
+  }
+]

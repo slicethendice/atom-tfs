@@ -16,7 +16,9 @@
     "microsoft"
   ],
   "activationCommands": {
-    "atom-workspace": "atom-tfs:toggle"
+    "atom-workspace": [
+      "atom-tfs:get"
+    ]
   },
   "repository": {
     "type": "git",
@@ -27,8 +29,7 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "tfs": "^1.2.1",
-    "tfs-unlock": "^0.3.5"
+    "tfs": "^1.2.1"
   },
   "readmeFilename": "README.md",
   "bugs": {
