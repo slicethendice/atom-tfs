@@ -21,7 +21,8 @@ To be able to use this plugin as is, you also need to be able to execute 'TF.exe
 
 - **GET**
 
-## Commands Implementation Roadmap
+## Roadmap
 
-- **CHECKIN**
-- **UNDO**
+- **AUTO CHECKOUT FOR EDIT** implementation
+- **CHECKIN** command implementation
+- **UNDO** command implementation
