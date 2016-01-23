@@ -5,13 +5,12 @@ module.exports = AtomTfs =
   subscriptions: null
 
   activate: (state) ->
-    console.log 'TFS activated'
+    console.info 'atom-tfs', 'Activated'
 
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
 
     # Register command that toggles this view
-    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-tfs:toggle': => @toggle()
     @subscriptions.add atom.commands.add 'atom-workspace', 'atom-tfs:get': => @get()
 
   deactivate: ->
@@ -19,9 +18,14 @@ module.exports = AtomTfs =
 
   serialize: ->
 
-  toggle: ->
-    console.log 'AtomTfs was toggled!'
-
   get: ->
-    console.log 'Atom TFS GET !'
-    console.log atom.workspace.getActivePaneItem()
+    activePanelItem = atom.workspace.getActivePaneItem();
+
+    # If this is "Settings" panel or an unsaved file
+    if !activePanelItem.buffer or !activePanelItem.buffer.file
+      return
+
+    console.info 'atom-tfs', 'GET ' + activePanelItem.buffer.file.path
+
+    command = tfs 'get', activePanelItem.buffer.file.path
+    console.info 'atom-tfs', command
