@@ -23,6 +23,7 @@ To be able to use this plugin as is, you also need to be able to execute 'TF.exe
 
 ## Roadmap
 
-- **AUTO CHECKOUT FOR EDIT** implementation
+- **STATUS BAR OUTPUT** to show TFS output logs and errors
+- **AUTO CHECKOUT FOR EDIT** to be able to edit files without unchecking "Read-only" files property
 - **CHECKIN** command implementation
 - **UNDO** command implementation
