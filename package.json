@@ -8,6 +8,7 @@
     "email": "ivan.gabriele@gmail.com",
     "url": "http://www.ivangabriele.com"
   },
+  "license": "MIT",
   "keywords": [
     "tfs",
     "team",
@@ -15,25 +16,24 @@
     "server",
     "microsoft"
   ],
-  "activationCommands": {
-    "atom-workspace": [
-      "atom-tfs:get"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ivangabriele/atom-tfs.git"
   },
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivangabriele/atom-tfs/issues"
+  },
+  "homepage": "https://github.com/ivangabriele/atom-tfs#readme",
+  "readmeFilename": "README.md",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
     "tfs": "^1.2.3"
   },
-  "readmeFilename": "README.md",
-  "bugs": {
-    "url": "https://github.com/ivangabriele/atom-tfs/issues"
-  },
-  "homepage": "https://github.com/ivangabriele/atom-tfs#readme"
+  "activationCommands": {
+    "atom-workspace": [
+      "atom-tfs:get"
+    ]
+  }
 }
