@@ -2,7 +2,7 @@
   "name": "atom-tfs",
   "main": "./lib/atom-tfs",
   "version": "0.4.0",
-  "description": "TFS Atom integration.",
+  "description": "TFS package for Atom.",
   "author": {
     "name": "Ivan Gabriele",
     "email": "ivan.gabriele@gmail.com",

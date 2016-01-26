@@ -1,5 +1,5 @@
 # atom-tfs
-**TFS plugin for Atom** _&nbsp; ― &nbsp; This is a work in progress..._
+**TFS package for Atom** _&nbsp; ― &nbsp; This is a work in progress..._
 
 [![Build Status](https://travis-ci.org/ivangabriele/atom-tfs.svg?branch=master)](https://travis-ci.org/ivangabriele/atom-tfs)
 [![NPM Version](https://img.shields.io/npm/v/atom-tfs.svg?style=flat)](https://www.npmjs.org/package/atom-tfs)
