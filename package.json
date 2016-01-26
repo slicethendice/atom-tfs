@@ -33,7 +33,9 @@
   },
   "activationCommands": {
     "atom-workspace": [
-      "atom-tfs:get"
+      "atom-tfs:checkin",
+      "atom-tfs:get",
+      "atom-tfs:undo"
     ]
   },
   "devDependencies": {
