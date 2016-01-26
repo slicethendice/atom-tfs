@@ -52,5 +52,5 @@ The last command create a `pre-commit` hook to ensure that you don't commit anyt
 
 #### Links
 
-- [TFS extension on Visual Studio Market Place](https://marketplace.visualstudio.com/items/ivangabriele.vscode-tfs)
+- [atom-tfs package on atom.io](https://atom.io/packages/atom-tfs)
 - [MIT Licence](https://github.com/ivangabriele/vscode-tfs/blob/master/LICENCE)
