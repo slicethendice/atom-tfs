@@ -4,8 +4,6 @@ module.exports = AtomTfs =
   subscriptions: null
 
   activate: (state) ->
-    console.log atom
-
     @subscriptions = new CompositeDisposable
     @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:checkin': => @tfsExec('checkin')))
     @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:get': => @tfsExec('get')))
