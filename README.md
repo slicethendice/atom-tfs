@@ -44,6 +44,11 @@ The last command create a `pre-commit` hook to ensure that you don't commit anyt
 
 1. **Auto-checkout** to be able to edit files without manually checking them out.
 2. **Check In comment** to add a "check in" comment (and make it mandatory ?)
+3. **Tree integration** to add a "check in" comment (and make it mandatory ?)
+4. **History** to open history of changesets under TF.exe
+5. **TFS Pane** to list pending changes
+6. **Checkin multiple files** to add a "check in" comment (and make it mandatory ?)
+7. **Exclude files from current checkin**
 
 #### Links
 
