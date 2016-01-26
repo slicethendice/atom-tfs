@@ -24,22 +24,12 @@ module.exports = function(grunt) {
         },
         target: libFiles
       }
-    },
-    mochaTest: {
-      dist: {
-        src: [
-          'test/index.js'
-        ]
-      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-githooks');
-  grunt.loadNpmTasks('grunt-jsdoc');
-  grunt.loadNpmTasks('grunt-mocha-test');
 
-  grunt.registerTask('doc', ['jshint:dist', 'jsdoc:dist']);
   grunt.registerTask('lint', 'jshint:dist');
-  grunt.registerTask('test', 'mochaTest:dist');
+  // grunt.registerTask('test', 'mochaTest:dist');
 };
