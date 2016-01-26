@@ -1,23 +1,31 @@
 # See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
 'context-menu':
-  '.tree-view': [
-    {
-      'label': 'TFS'
-      'submenu': [
-        {
-          'label': 'Get Latest Version'
-          'command': 'atom-tfs:get'
-        }
-      ]
-    }
-  ]
+  # '.tree-view': [
+  #   {
+  #     'label': 'TFS'
+  #     'submenu': [
+  #       {
+  #         'label': 'Get Latest Version'
+  #         'command': 'atom-tfs:get'
+  #       }
+  #     ]
+  #   }
+  # ]
   'atom-text-editor': [
     {
       'label': 'TFS'
       'submenu': [
         {
+          'label': 'Check In'
+          'command': 'atom-tfs:checkin'
+        }
+        {
           'label': 'Get Latest Version'
           'command': 'atom-tfs:get'
+        }
+        {
+          'label': 'Undo Pending Changes'
+          'command': 'atom-tfs:undo'
         }
       ]
     }
@@ -29,8 +37,16 @@
       'label': 'TFS'
       'submenu': [
         {
+          'label': 'Check In'
+          'command': 'atom-tfs:checkin'
+        }
+        {
           'label': 'Get Latest Version'
           'command': 'atom-tfs:get'
+        }
+        {
+          'label': 'Undo Pending Changes'
+          'command': 'atom-tfs:undo'
         }
       ]
     ]

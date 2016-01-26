@@ -24,7 +24,9 @@
 
 ## Available commands
 
+- **Checkin**
 - **Get**
+- **Undo**
 
 ## Contribute
 
@@ -40,10 +42,8 @@ The last command create a `pre-commit` hook to ensure that you don't commit anyt
 
 ## Roadmap
 
-1. **Status bar output** to show TFS output logs and errors.
-2. **Auto-checkout** to be able to edit files without manually checking them out.
-3. **Checkin** command
-4. **Undo** command
+1. **Auto-checkout** to be able to edit files without manually checking them out.
+2. **Check In comment** to add a "check in" comment (and make it mandatory ?)
 
 #### Links
 

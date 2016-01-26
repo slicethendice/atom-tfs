@@ -1,31 +1,32 @@
 {CompositeDisposable} = require 'atom'
-tfs = require 'tfs'
 
 module.exports = AtomTfs =
   subscriptions: null
 
   activate: (state) ->
-    console.info 'atom-tfs', 'Activated'
+    console.log atom
 
-    # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
-
-    # Register command that toggles this view
-    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-tfs:get': => @get()
+    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:checkin': => @tfsExec('checkin')))
+    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:get': => @tfsExec('get')))
+    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:undo': => @tfsExec('undo')))
 
   deactivate: ->
     @subscriptions.dispose()
 
   serialize: ->
 
-  get: ->
-    activePanelItem = atom.workspace.getActivePaneItem();
+  tfsExec: (command) ->
+    activePanelItem = atom.workspace.getActivePaneItem()
 
-    # If this is "Settings" panel or an unsaved file
-    if !activePanelItem.buffer or !activePanelItem.buffer.file
+    # If there is no file edited in the active panel
+    if !activePanelItem.buffer
+      vscode.window.showErrorMessage 'TFS: There is no file opened.'
       return
 
-    console.info 'atom-tfs', 'GET ' + activePanelItem.buffer.file.path
+    # If this is an new untitled file
+    if !activePanelItem.buffer.file
+      vscode.window.showErrorMessage('TFS: You need to save your file somewhere before.');
+      return
 
-    command = tfs 'get', activePanelItem.buffer.file.path
-    console.info 'atom-tfs', command
+    require('./tfs/' + command)([activePanelItem.buffer.file.path])
