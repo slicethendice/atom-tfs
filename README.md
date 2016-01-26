@@ -1,5 +1,5 @@
 # atom-tfs
-**TFS Atom integration** _&nbsp; ― &nbsp; This is a work in progress..._
+**TFS plugin for Atom** _&nbsp; ― &nbsp; This is a work in progress..._
 
 [![Build Status](https://travis-ci.org/ivangabriele/atom-tfs.svg?branch=master)](https://travis-ci.org/ivangabriele/atom-tfs)
 [![NPM Version](https://img.shields.io/npm/v/atom-tfs.svg?style=flat)](https://www.npmjs.org/package/atom-tfs)
@@ -11,20 +11,41 @@
 
 ## Important !
 
-> **You MUST have Visual Studio 2010 or above installed with Team Foundation Server.**
+> **You MUST have Visual Studio and Team Foundation Server Power Tools installed to be able to use this extension.**
 
-## About TFS permissions
+## Installation
 
-To be able to use this plugin as is, you also need to be able to execute 'TF.exe' commands in your favorite CLI without any login window. It may be planned to implement an auto `/login` to avoid that but this would be highly unsafe to store your login and password into settings.
+1. Open up Atom
+2. Type **`CTRL+MAJ+P`**
+3. Type `install` in command palette.
+4. Select `Settings View: Install Packages And Themes` and hit **`ENTER`**
+5. Type `tfs` and hit **`ENTER`**
+6. Select **`atom-tfs`** extension and hit **`ENTER`**
 
 ## Available commands
 
-- **GET**
+- **Get**
+
+## Contribute
+
+To be able to contribute to TFS development, you need to be at ease with **NodeJS** language and **Git** usage.
+
+    git clone https://github.com/ivangabriele/vscode-tfs.git
+    cd vscode-tfs
+    npm install
+    npm install grunt-cli -g
+    grunt githooks
+
+The last command create a `pre-commit` hook to ensure that you don't commit anything if it the tests are not successful.
 
 ## Roadmap
 
-- **STATUS BAR OUTPUT** to show TFS output logs and errors
-- **CHECKOUT** command implementation
-- **AUTO CHECKOUT FOR EDIT** to be able to edit files without unchecking "Read-only" files property
-- **CHECKIN** command implementation
-- **UNDO** command implementation
+1. **Status bar output** to show TFS output logs and errors.
+2. **Auto-checkout** to be able to edit files without manually checking them out.
+3. **Checkin** command
+4. **Undo** command
+
+#### Links
+
+- [TFS extension on Visual Studio Market Place](https://marketplace.visualstudio.com/items/ivangabriele.vscode-tfs)
+- [MIT Licence](https://github.com/ivangabriele/vscode-tfs/blob/master/LICENCE)
