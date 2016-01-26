@@ -29,7 +29,7 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "tfs": "^1.2.3"
+    "tfs": "^1.2.9"
   },
   "activationCommands": {
     "atom-workspace": [
