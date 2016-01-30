@@ -12,21 +12,16 @@ describe "AtomTfs", ->
     workspaceElement = atom.views.getView(atom.workspace)
     activationPromise = atom.packages.activatePackage('atom-tfs')
 
-  # describe "when the atom-tfs:toggle event is triggered", ->
-    # it "hides and shows the modal panel", ->
-      # Before the activation event the view is not on the DOM, and no panel
-      # has been created
-      # expect(workspaceElement.querySelector('.atom-tfs')).not.toExist()
+  describe "when the atom-tfs:open event is triggered", ->
+    it "shows the modal panel", ->
+      expect(workspaceElement.querySelector('.atomTfs')).not.toExist()
+      atom.commands.dispatch workspaceElement, 'atom-tfs:open'
 
-      # This is an activation event, triggering it will cause the package to be
-      # activated.
-      # atom.commands.dispatch workspaceElement, 'atom-tfs:toggle'
+      waitsForPromise ->
+        activationPromise
 
-      # waitsForPromise ->
-        # activationPromise
-
-      # runs ->
-        # expect(workspaceElement.querySelector('.atom-tfs')).toExist()
+      runs ->
+        expect(workspaceElement.querySelector('.atomTfs')).toExist()
 
         # atomTfsElement = workspaceElement.querySelector('.atom-tfs')
         # expect(atomTfsElement).toExist()
