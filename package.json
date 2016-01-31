@@ -35,6 +35,7 @@
     "atom-workspace": [
       "atom-tfs:checkin",
       "atom-tfs:get",
+      "atom-tfs:open",
       "atom-tfs:undo"
     ]
   },

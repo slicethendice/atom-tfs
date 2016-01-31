@@ -15,18 +15,11 @@
     {
       'label': 'TFS'
       'submenu': [
-        {
-          'label': 'Check In'
-          'command': 'atom-tfs:checkin'
-        }
-        {
-          'label': 'Get Latest Version'
-          'command': 'atom-tfs:get'
-        }
-        {
-          'label': 'Undo Pending Changes'
-          'command': 'atom-tfs:undo'
-        }
+        { 'label': 'Open TFS Pane', 'command': 'atom-tfs:open' }
+        { type: 'separator' }
+        { 'label': 'Check In', 'command': 'atom-tfs:checkin' }
+        { 'label': 'Get Latest Version', 'command': 'atom-tfs:get' }
+        { 'label': 'Undo Pending Changes', 'command': 'atom-tfs:undo' }
       ]
     }
   ]
@@ -36,18 +29,11 @@
     'submenu': [
       'label': 'TFS'
       'submenu': [
-        {
-          'label': 'Check In'
-          'command': 'atom-tfs:checkin'
-        }
-        {
-          'label': 'Get Latest Version'
-          'command': 'atom-tfs:get'
-        }
-        {
-          'label': 'Undo Pending Changes'
-          'command': 'atom-tfs:undo'
-        }
+        { 'label': 'Open TFS Pane', 'command': 'atom-tfs:open' }
+        { type: 'separator' }
+        { 'label': 'Check In', 'command': 'atom-tfs:checkin' }
+        { 'label': 'Get Latest Version', 'command': 'atom-tfs:get' }
+        { 'label': 'Undo Pending Changes', 'command': 'atom-tfs:undo' }
       ]
     ]
   }
