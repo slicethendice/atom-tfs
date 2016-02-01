@@ -1,30 +1,50 @@
 {CompositeDisposable} = require 'atom'
-WordcountView = require './atom-tfs-view'
 
 AtomTfs =
-  atomTfsView: null
+  view: null
+  panel: null
   state:
     isOpen: false
   subscriptions: null
 
-  activate: (state) ->
-    console.log(state);
-    @state = state
+  activate: (@state) ->
+    console.log @state
+    @disposables = new CompositeDisposable
+    @state.attached ?= true if @shouldAttach()
 
-    @subscriptions = new CompositeDisposable
-    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:toggle':  => @toggle()))
-    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:checkin': => @tfsExec('checkin')))
-    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:get':     => @tfsExec('get')))
-    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:undo':    => @tfsExec('undo')))
+    @createView() if @state.attached
 
-    if @state.isOpen
-      @open()
+    @disposables.add atom.commands.add('atom-workspace', {
+      'atom-tfs:toggle':  => @toggle()
+      'atom-tfs:checkin': => @tfsExec('checkin')
+      'atom-tfs:get':     => @tfsExec('get')
+      'atom-tfs:undo':    => @tfsExec('undo')
+    })
 
   deactivate: ->
-    @subscriptions.dispose()
+    @disposables.dispose()
 
   serialize: ->
-    @state
+    if @atomTfsView?
+      @atomTfsView.serialize()
+    else
+      @state
+
+  createView: ->
+    unless @atomTfsView?
+      AtomTfsView = require './atom-tfs-view'
+      @atomTfsView = new TfsView(@state)
+    @atomTfsView
+
+  shouldAttach: ->
+    projectPath = atom.project.getPaths()[0]
+    if atom.workspace.getActivePaneItem()
+      false
+    else if path.basename(projectPath) is '.git'
+      # If .git was opened explicitly and not by using Atom as the Git editor.
+      projectPath is atom.getLoadSettings().pathToOpen
+    else
+      true
 
   toggle: ->
     @state.isOpen = !@state.isOpen
@@ -34,15 +54,13 @@ AtomTfs =
       @close()
 
   open: ->
-    @atomTfsView = new WordcountView
-    atom.workspace.addRightPanel({
-      item: @atomTfsView.getElement()
+    @view = new WordcountView
+    @panel = atom.workspace.addRightPanel({
+      item: @view.getElement()
     })
 
   close: ->
-    atom.workspace.addRightPanel({
-      item: @atomTfsView.getElement()
-    })
+    @panel.hide()
 
   tfsExec: (command) ->
     activePanelItem = atom.workspace.getActivePaneItem()
