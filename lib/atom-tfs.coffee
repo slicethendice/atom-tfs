@@ -12,10 +12,10 @@ AtomTfs =
     @state = state
 
     @subscriptions = new CompositeDisposable
-    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:open': => @open()))
+    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:toggle':  => @toggle()))
     @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:checkin': => @tfsExec('checkin')))
-    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:get': => @tfsExec('get')))
-    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:undo': => @tfsExec('undo')))
+    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:get':     => @tfsExec('get')))
+    @subscriptions.add(atom.commands.add('atom-workspace', 'atom-tfs:undo':    => @tfsExec('undo')))
 
     if @state.isOpen
       @open()
@@ -24,9 +24,7 @@ AtomTfs =
     @subscriptions.dispose()
 
   serialize: ->
-    {
-      isOpen: @state.isOpen
-    }
+    @state
 
   toggle: ->
     @state.isOpen = !@state.isOpen
@@ -42,7 +40,6 @@ AtomTfs =
     })
 
   close: ->
-    @atomTfsView = new WordcountView
     atom.workspace.addRightPanel({
       item: @atomTfsView.getElement()
     })
