@@ -3,7 +3,8 @@ WordcountView = require './atom-tfs-view'
 
 AtomTfs =
   atomTfsView: null
-  state: null
+  state:
+    isOpen: false
   subscriptions: null
 
   activate: (state) ->
@@ -24,11 +25,23 @@ AtomTfs =
 
   serialize: ->
     {
-      isOpen: @isOpen
+      isOpen: @state.isOpen
     }
 
+  toggle: ->
+    @state.isOpen = !@state.isOpen
+    if @state.isOpen
+      @open()
+    else
+      @close()
+
   open: ->
-    console.log("open")
+    @atomTfsView = new WordcountView
+    atom.workspace.addRightPanel({
+      item: @atomTfsView.getElement()
+    })
+
+  close: ->
     @atomTfsView = new WordcountView
     atom.workspace.addRightPanel({
       item: @atomTfsView.getElement()

@@ -5,7 +5,7 @@ class AtomTfsView
     @element.classList.add('atomTfs')
 
     message = document.createElement('div')
-    message.textContent = "Hi !"
+    message.textContent = "Pending changes (soon !)"
     @element.appendChild(message)
 
     # Create message element
